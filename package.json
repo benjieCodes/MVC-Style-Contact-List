@@ -37,5 +37,10 @@
     "sass-module-importer": "1.2.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "bulma": "0.0.26",
+    "jquery": "^2.2.3",
+    "lodash": "^4.12.0"
   }
 }
