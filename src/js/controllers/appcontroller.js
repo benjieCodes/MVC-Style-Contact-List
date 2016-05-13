@@ -1,15 +1,17 @@
 import $ from 'jquery';
-
-
+import { Contact } from '../models/contactmodel';
 
 export class AppController {
 
 
-  constructor(contactForm, contactListElem) {
+  constructor(contactForm, contacts) {
     this.contactForm = contactForm;
-    this.contactList = contactListElem;
+    this.contactList = contacts;
   }
 
+  initialize() {
+    this.submitContact();
+  }
 
   submitContact() {
     this.contactForm.on('submit', (event) => {
@@ -18,7 +20,6 @@ export class AppController {
       let photo         = this.contactForm.find('.photoInput').val();
       let phone         = this.contactForm.find('.phoneInput').val();
       let location      = this.contactForm.find('.locationInput').val();
-      this.submitToList(name, photo, phone, location);
       if (name.length < 1) {
         alert('Please enter your name before submitting')
       } else if (photo.length < 1) {
@@ -28,30 +29,33 @@ export class AppController {
       } else if (location.length < 1) {
         alert('Please enter your city, state before submitting')
       } else {
+        this.submitToList(name, photo, phone, location);
         return $('.input').val('');
       }
     });
    }
 
-   submitToList(nameDesc, photoDesc, phoneDesc, locationDesc) {
-     
+   submitToList(name, photo, phone, location) {
+     let contact = new Contact(name, photo, phone, location);
+     console.log(contact);
+     this.appendContactsToHTML(contact)
+   }
+
+   appendContactsToHTML(object) {
+     let contactHTML = this.contactTemplate(object)
+     this.contactList.append(contactHTML);
    }
 
 
-  //  let name          = $('.nameInput').val();
-  //  let photo         = $('.photoInput').val();
-  //  let phone         = $('.phoneInput').val();
-  //  let location      = $('.locationInput').val();        let resetInput    = $('.input').val('');
-   //
-  //  submitContact(nameInput, photoInput, phoneInput, locationInput, resetInput) {
-  //   this.contactForm.on('submit', function (event) {
-  //     event.preventDefault();
-  //     let nameInput     = $('.nameInput').val();
-  //     let photoInput    = $('.photoInput').val();
-  //     let phoneInput    = $('.phoneInput').val();
-  //     let locationInput = $('.locationInput').val();
-  //     let resetInput = $('.input').val('');
-  //     console.log(nameInput, photoInput, phoneInput, locationInput, resetInput);
-  //   });
-  //  }
+   contactTemplate (object) {
+     return `
+     <h1>Contact Info</h1>
+     <p class="name">${object.name}</p>
+     <p class="photo">${object.photo}</p>
+     <p class="phone">${object.phone}</p>
+     <p class="location">${object.location}</p>
+     `;
+   }
+
+
 }

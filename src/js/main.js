@@ -3,8 +3,7 @@ import _ from 'lodash';
 
 
 // import models
-import { Contact } from './models/contact';
-import { ContactModel } from './models/contactmodel';
+import { ContactList } from './models/contactmodel';
 import { AppController } from './controllers/appcontroller';
 
 // variables to control HTML using jQuery
@@ -17,8 +16,5 @@ let submitContact = $('.submitContact');
 let contactList   = $('.contactList');
 
 // instantiate the classes
-let contact = new Contact();
-let contactModel = new ContactModel();
 let appController = new AppController(contactForm, contactList);
-console.log(appController);
-appController.submitContact();
+appController.initialize();
