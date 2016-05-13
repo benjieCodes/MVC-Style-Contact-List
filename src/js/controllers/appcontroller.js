@@ -49,11 +49,13 @@ export class AppController {
 
    contactTemplate (object) {
      return `
-     <h1>Contact Info</h1>
+     <li>
      <p class="name">${object.name}</p>
      <p class="photo">${object.photo}</p>
      <p class="phone">${object.phone}</p>
      <p class="location">${object.location}</p>
+     </li>
+     <hr>
      `;
    }
 
