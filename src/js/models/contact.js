@@ -1,10 +1,10 @@
 export class Contact {
 
-  constructor(firstName, lastName, url, phone, city, state) {
-    this.name = {first: firstName, last: lastName};
-    this.photo = url;
+  constructor(name, photo, phone, location) {
+    this.name = name;
+    this.photo = photo;
     this.phone = phone;
-    this.location = {city: city, state: state}
+    this.location = location;
   }
 
 }

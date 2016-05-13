@@ -5,9 +5,8 @@ import $ from 'jquery';
 export class AppController {
 
 
-  constructor(contactForm, contactArea, contactListElem) {
+  constructor(contactForm, contactListElem) {
     this.contactForm = contactForm;
-    this.contactArea = contactArea;
     this.contactList = contactListElem;
   }
 
@@ -19,7 +18,7 @@ export class AppController {
       let photo         = this.contactForm.find('.photoInput').val();
       let phone         = this.contactForm.find('.phoneInput').val();
       let location      = this.contactForm.find('.locationInput').val();
-
+      this.submitToList(name, photo, phone, location);
       if (name.length < 1) {
         alert('Please enter your name before submitting')
       } else if (photo.length < 1) {
@@ -32,6 +31,10 @@ export class AppController {
         return $('.input').val('');
       }
     });
+   }
+
+   submitToList(nameDesc, photoDesc, phoneDesc, locationDesc) {
+     
    }
 
 

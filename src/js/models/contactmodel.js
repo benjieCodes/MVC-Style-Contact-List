@@ -1,6 +1,6 @@
 export class ContactModel {
 
-  constructor () {
+  constructor (contactDesc) {
     this.contactlist = [];
   }
 

@@ -19,6 +19,6 @@ let contactList   = $('.contactList');
 // instantiate the classes
 let contact = new Contact();
 let contactModel = new ContactModel();
-let appController = new AppController(contactForm, contactList, contactModel);
+let appController = new AppController(contactForm, contactList);
 console.log(appController);
 appController.submitContact();
