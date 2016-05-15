@@ -48,14 +48,16 @@ export class AppController {
 
 
    contactTemplate (object) {
+     if (object.photo === null) {
+       object.photo = 'http://placehold.it/100x100';
+     }
      return `
      <li>
-     <p class="name">${object.name}</p>
-     <p class="photo">${object.photo}</p>
-     <p class="phone">${object.phone}</p>
-     <p class="location">${object.location}</p>
+     <p class="name">Name: ${object.name}</p>
+     <img src=${object.photo} alt="photo of contact">
+     <p class="phone">Phone Number: ${object.phone}</p>
+     <p class="location">Location: ${object.location}</p>
      </li>
-     <hr>
      `;
    }
 

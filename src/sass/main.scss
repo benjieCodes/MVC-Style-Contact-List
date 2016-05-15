@@ -27,3 +27,25 @@
   color: white;
   font-weight: bold;
 }
+
+.headerForList {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+li {
+  width: 300px;
+  margin: 30px auto;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: lightgrey;
+  padding: 30px;
+}
+
+li p {
+  padding-left: 30px;
+  text-align: left;
+
+}
