@@ -11,6 +11,7 @@ export class AppController {
 
   initialize() {
     this.submitContact();
+    this.removeContactsFromHTML();
   }
 
   submitContact() {
@@ -46,6 +47,13 @@ export class AppController {
      this.contactList.append(contactHTML);
    }
 
+   removeContactsFromHTML() {
+     this.contactList.on('click', '.removeClass', function(event) {
+       event.preventDefault();
+       $('li').remove();
+     });
+
+   }
 
    contactTemplate (object) {
      if (object.photo === null) {
@@ -57,6 +65,7 @@ export class AppController {
      <img src=${object.photo} alt="photo of contact">
      <p class="phone">Phone Number: ${object.phone}</p>
      <p class="location">Location: ${object.location}</p>
+     <div class="removeContact"> X </div>
      </li>
      `;
    }

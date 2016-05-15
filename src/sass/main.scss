@@ -41,11 +41,25 @@ li {
   border: 1px solid black;
   border-radius: 10px;
   background: lightgrey;
-  padding: 30px;
+  padding: 20px;
+  position: relative;
 }
 
 li p {
-  padding-left: 30px;
+  font-weight: bold;
+  padding-left: 10px;
   text-align: left;
 
+}
+
+.removeContact {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: black;
+  color: white;
 }
