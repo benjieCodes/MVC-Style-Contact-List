@@ -23,7 +23,7 @@ export class AppController {
       let phone         = this.contactForm.find('.phoneInput').val();
       let location      = this.contactForm.find('.locationInput').val();
       if (name.length < 1) {
-        alert('Please enter your name before submitting')
+        $('.warningName').removeClass('hidden');
       } else if (photo.length < 1) {
         alert('Please enter your photo url before submitting')
       } else if (phone.length < 1) {
@@ -32,6 +32,7 @@ export class AppController {
         alert('Please enter your city, state before submitting')
       } else {
         this.submitToList(name, photo, phone, location);
+        $('span').addClass('hidden');
         return $('.input').val('');
       }
     });
@@ -50,7 +51,7 @@ export class AppController {
 
    removeContactsFromHTML() {
      this.contactList.on('click', '.removeContact', function (event) {
-       event.preventDefault();
+      event.preventDefault();
       $(this).parent().css('display','none');
      });
 

@@ -52,6 +52,11 @@ li p {
 
 }
 
+li img {
+  border-radius: 100%;
+  border: 1px solid black;
+}
+
 .removeContact {
   cursor: pointer;
   position: absolute;
@@ -62,4 +67,8 @@ li p {
   border-radius: 100%;
   background-color: black;
   color: white;
+}
+
+.hidden {
+  display: none;
 }
