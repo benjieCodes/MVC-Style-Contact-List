@@ -25,11 +25,11 @@ export class AppController {
       if (name.length < 1) {
         $('.warningName').removeClass('hidden');
       } else if (photo.length < 1) {
-        alert('Please enter your photo url before submitting')
+        $('.warningPhoto').removeClass('hidden');
       } else if (phone.length < 1) {
-        alert('Please enter your phone number before submitting')
+        $('.warningPhone').removeClass('hidden');
       } else if (location.length < 1) {
-        alert('Please enter your city, state before submitting')
+        $('.warningLocation').removeClass('hidden');
       } else {
         this.submitToList(name, photo, phone, location);
         $('span').addClass('hidden');
