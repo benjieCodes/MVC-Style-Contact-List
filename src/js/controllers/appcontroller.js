@@ -56,7 +56,9 @@ export class AppController {
    }
 
    contactTemplate (object) {
-     if (object.photo === null) {
+     if (object.photo.substring(0,4) === 'http') {
+       object.photo = object.photo;
+     } else {
        object.photo = 'http://placehold.it/100x100';
      }
      return `
