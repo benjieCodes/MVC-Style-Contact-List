@@ -7,7 +7,7 @@ export class AppController {
   constructor(contactForm, contacts) {
     this.contactForm = contactForm;
     this.contactList = contacts;
-    //this.removeContact = removeContact;
+
   }
 
   initialize() {
@@ -40,7 +40,6 @@ export class AppController {
 
    submitToList(name, photo, phone, location) {
      let contact = new Contact(name, photo, phone, location);
-     console.log(contact);
      this.appendContactsToHTML(contact)
    }
 

@@ -10,4 +10,4 @@
 
 ## Deployment
 
-(https://tiy-abrambenjsongsong-mvc-style-app.surge.sh)
+(http://tiy-abrambenjsongsong-mvc-style-app.surge.sh)
