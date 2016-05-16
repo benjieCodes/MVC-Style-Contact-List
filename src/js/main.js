@@ -14,7 +14,7 @@ let phoneInput    = $('.phoneInput');
 let locationInput = $('.locationInput');
 let submitContact = $('.submitContact');
 let contactList   = $('.contactList');
-
+let removeContact = $('.removeContact');
 // instantiate the classes
 let appController = new AppController(contactForm, contactList);
 appController.initialize();

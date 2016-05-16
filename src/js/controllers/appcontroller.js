@@ -7,6 +7,7 @@ export class AppController {
   constructor(contactForm, contacts) {
     this.contactForm = contactForm;
     this.contactList = contacts;
+    //this.removeContact = removeContact;
   }
 
   initialize() {
@@ -48,9 +49,9 @@ export class AppController {
    }
 
    removeContactsFromHTML() {
-     this.contactList.on('click', '.removeClass', function(event) {
+     this.contactList.on('click', '.removeContact', function (event) {
        event.preventDefault();
-       $('li').remove();
+      $(this).parent().css('display','none');
      });
 
    }
