@@ -2,7 +2,8 @@
 import chai from 'chai';
 
 // Import Any Files to Test
-import '../src/js/main';
+import { Contact } from '../src/js/models/contactmodel';
+import { AppController } from '../src/js/controllers/appcontroller';
 
 // Set Chai Constants
 const expect = chai.expect;
@@ -11,11 +12,16 @@ const assert = chai.assert;
 
 describe('Something We Want To Test', function () {
 
-  describe('Testing the Creation of Something', function () {
+  describe('Testing the Creation of MVC Structure', function () {
 
-    it('should exist after we create it', function () {
-      let x = new Object;
-      expect(x).to.be.an.instanceof(Object);
+    it('should be an instance of a new contact when created', function () {
+      let contact = new Contact();
+      expect(contact).to.be.an.instanceof(Contact);
+    });
+
+    it('should be an instance of an application controller when created', function () {
+      let app = new AppController();
+      expect(app).to.be.an.instanceof(AppController);
     });
 
   });

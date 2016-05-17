@@ -2,17 +2,15 @@ import $ from 'jquery';
 import { Contact } from '../models/contactmodel';
 
 export class AppController {
-
-
   constructor(contactForm, contacts) {
     this.contactForm = contactForm;
     this.contactList = contacts;
-
   }
 
   initialize() {
     this.submitContact();
     this.removeContactsFromHTML();
+
   }
 
   submitContact() {
@@ -40,7 +38,8 @@ export class AppController {
 
    submitToList(name, photo, phone, location) {
      let contact = new Contact(name, photo, phone, location);
-     this.appendContactsToHTML(contact)
+     this.appendContactsToHTML(contact);
+     console.log(contact);
    }
 
    appendContactsToHTML(object) {
